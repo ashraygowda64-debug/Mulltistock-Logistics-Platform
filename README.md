@@ -1,1 +1,0 @@
-# Mulltistock-Logistics-Platform
