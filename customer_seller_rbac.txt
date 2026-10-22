@@ -1,0 +1,62 @@
+# Customer Seller role permissions - between customer and staff
+'customer_seller': {
+    # Products & Inventory (can create listings)
+    'products': {'view': True, 'create': True, 'edit': True, 'delete': True, 'export': False, 'import': False, 'barcode': True},
+    'inventory': {'view': True, 'create': True, 'edit': True, 'delete': False, 'export': False, 'transfer': False, 'audit': False},
+    'stock': {'view': True, 'adjust': True, 'transfer': False, 'alert': False, 'export': False, 'audit': False},
+    'categories': {'view': True, 'create': False, 'edit': False, 'delete': False},
+    'barcode': {'view': True, 'generate': True, 'scan': True, 'print': True},
+    
+    # Orders & Sales (can manage own sales)
+    'orders': {'view': True, 'create': True, 'edit': True, 'delete': False, 'approve': False, 'cancel': False, 'export': True},
+    'pos': {'view': True, 'create': True, 'process': True, 'refund': False},
+    'quotations': {'view': True, 'create': True, 'edit': True, 'convert': False, 'delete': False},
+    'returns': {'view': True, 'approve': False, 'refund': False, 'process': True},
+    
+    # Customers & Suppliers (view own customer list)
+    'customers': {'view': True, 'create': True, 'edit': False, 'delete': False, 'export': False},
+    'suppliers': {'view': False, 'create': False, 'edit': False, 'delete': False, 'export': False},
+    
+    # Team & Users (NO access)
+    'users': {'view': False, 'create': False, 'edit': False, 'delete': False, 'promote': False, 'deactivate': False},
+    'team': {'view': False, 'create': False, 'assign': False, 'manage': False},
+    'permissions': {'view': False, 'create': False, 'edit': False, 'delete': False, 'grant': False},
+    
+    # Marketplace & Community (FULL seller access)
+    'marketplace': {'view': True, 'buy': True, 'manage': True, 'feature': False, 'moderate': False},
+    'auctions': {'view': True, 'create': True, 'bid': True, 'moderate': False, 'end': False},
+    'forums': {'view': True, 'post': True, 'reply': True, 'moderate': False, 'delete': False, 'pin': False, 'ban': False},
+    
+    # Rentals & Storage (Can create listings)
+    'rentals': {'view': True, 'create': True, 'book': True, 'checkin': True, 'checkout': True, 'billing': True, 'export': True},
+    'storage': {'view': True, 'create': True, 'assign': True, 'billing': True, 'export': True},
+    'lockers': {'view': True, 'create': True, 'assign': False, 'access': True},
+    
+    # Financial (Seller earnings & payouts)
+    'billing': {'view': True, 'create': True, 'edit': False, 'delete': False, 'pdf': True, 'export': True},
+    'expenses': {'view': True, 'create': True, 'approve': False, 'export': False},
+    'credit': {'view': True, 'set_limit': False, 'approve': False, 'export': False},
+    'coupons': {'view': True, 'create': True, 'edit': True, 'delete': False},
+    'payments': {'view': True, 'process': True, 'refund': False, 'withdraw': True},
+    
+    # Analytics & Reports (Own sales reports)
+    'analytics': {'view': True, 'create': False, 'export': True, 'configure': False},
+    'reports': {'view': True, 'create': True, 'schedule': False, 'export': True, 'delete': False},
+    'audit': {'view': False, 'export': False, 'purge': False},
+    
+    # System & Settings (View only)
+    'settings': {'view': True, 'edit': False, 'configure': False, 'backup': False, 'restore': False},
+    'warehouses': {'view': True, 'create': False, 'edit': False, 'delete': False, 'configure': False},
+    'automation': {'view': False, 'create': False, 'edit': False, 'delete': False},
+    'webhooks': {'view': False, 'create': False, 'edit': False, 'delete': False, 'logs': False},
+    'subscriptions': {'view': True, 'manage': False, 'billing': False},
+    
+    # Support & Messages
+    'support': {'view': True, 'create': True, 'assign': False, 'resolve': False, 'delete': False},
+    'messaging': {'view': True, 'send': True, 'group': False, 'moderate': False},
+    'notifications': {'view': True, 'send': False, 'configure': False},
+    
+    # Special
+    'gamification': {'view': True, 'configure': False, 'award': False},
+    'mobile_api': {'view': True, 'access': True},
+},
